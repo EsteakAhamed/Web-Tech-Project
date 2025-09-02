@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: lavender;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #7B68EE;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logout-btn {
+    background-color: #e74c3c;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 30px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    display: block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.sidebar-menu ul li.active a,
+.sidebar-menu ul li a:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content h1 {
+    font-size: 32px;
+    color: #3b5998;
+    margin-bottom: 30px;
+}
+
+.feedback-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feedback-post {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feedback-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.icon {
+    font-size: 36px;
+}
+
+.feedback-content h3 {
+    font-size: 22px;
+    color: #3b5998;
+    margin-bottom: 8px;
+}
+
+.feedback-content p {
+    font-size: 16px;
+    color: #555;
+}
+
+.patient-feedback {
+    border-left: 4px solid #2ecc71;
+}

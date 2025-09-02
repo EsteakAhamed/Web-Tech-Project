@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealWell Hospital - Approve Doctor Requests</title>
+  <link rel="stylesheet" href="../style/doctorReq.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="../assets/profile.png" alt="Profile">
+        <h2>Administrator</h2>
+      </div>
+      <button class="logout">Logout</button>
+      <nav class="menu">
+        <ul>
+          <li><a href="admin.html">Dashboard</a></li>
+          <li class="active"><a href="doctor.html">Doctor</a></li>
+          <li><a href="patient.html">Patient</a></li>
+          <li><a href="feedback.html">Feedbacks</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <h1>Approve Doctor's Requests</h1>
+      <table class="doctor-table">
+        <thead>
+          <tr>
+            <th>Doctor Name</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Additional Note</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Emon</td>
+            <td>Stethoscope</td>
+            <td>1</td>
+            <td>Urgent need</td>
+            <td>
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>

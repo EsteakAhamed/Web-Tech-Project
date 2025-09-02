@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealWell Hospital - Patient List</title>
+    <link rel="stylesheet" href="../style/patientList.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <img src="../assets/profile.png" alt="Profile" class="profile-img">
+                <h2>Administrator</h2>
+            </div>
+            <button class="logout-btn">Logout</button>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li><a href="admin.html">Dashboard</a></li>
+                    <li><a href="doctor.html">Doctor</a></li>
+                    <li class="active"><a href="patient.html">Patient</a></li>
+                    <li><a href="feedback.html">Feedbacks</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <h1>Patient List</h1>
+            <input type="text" placeholder="Search by name" class="search-bar">
+            <table class="patient-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nirob</td>
+                        <td>25</td>
+                        <td>nirob@example.com</td>
+                        <td>017********</td>
+                        <td>Noakhali Division</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

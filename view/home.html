@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealWell Hospital</title>
+    <link rel="stylesheet" href="../style/home.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>HealWell Hospital</h1>
+        </div>
+        <div class="header-right">
+            <span class="contact">
+                <img src="../assets/phone.png" alt="Phone" class="icon">
+                01*********
+            </span>
+            <span class="location">
+                <img src="../assets/location.png" alt="Location" class="icon">
+                Dhaka, Bangladesh
+            </span>
+        </div>
+    </header>
+    <nav>
+        <ul class="nav-left">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Registration</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+        <div class="login-container">
+            <form>
+                <h2 class="login-title">Login As</h2>
+                <div class="radio-group">
+                    <input type="radio" id="patient" name="role" value="Patient">
+                    <label for="patient">Patient</label>
+                    <input type="radio" id="doctor" name="role" value="Doctor">
+                    <label for="doctor">Doctor</label>
+                    <input type="radio" id="admin" name="role" value="Admin">
+                    <label for="admin">Admin</label>
+                </div>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p class="forgot-password"><a href="#">Forget Password?</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

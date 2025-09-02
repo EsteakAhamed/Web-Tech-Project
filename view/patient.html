@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealWell Hospital - Patient</title>
+    <link rel="stylesheet" href="../style/patient.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <img src="../assets/profile.png" alt="Profile" class="profile-img">
+                <h2>Administrator</h2>
+            </div>
+            <button class="logout-btn">Logout</button>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li><a href="admin.html">Dashboard</a></li>
+                    <li><a href="doctor.html">Doctor</a></li>
+                    <li class="active"><a href="patient.html">Patient</a></li>
+                    <li><a href="feedback.html">Feedbacks</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="cards">
+                <a href="patientList.html" class="card view-card">
+                    <span class="icon">👥</span>
+                    <div>
+                        <h3>View Patient List</h3>
+                        <p>See all registered patients</p>
+                    </div>
+                </a>
+                <a href="patientHistory.html" class="card history-card">
+                    <span class="icon">📋</span>
+                    <div>
+                        <h3>Patient History</h3>
+                        <p>View medical history records</p>
+                    </div>
+                </a>
+                <a href="patientAid.html" class="card financial-card">
+                    <span class="icon">💰</span>
+                    <div>
+                        <h3>Financial Aid Request</h3>
+                        <p>Approve or deny patient aid requests</p>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
