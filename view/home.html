@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealWell Hospital</title>
-    <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="style/home.css">
 </head>
 <body>
     <header>
@@ -13,11 +13,11 @@
         </div>
         <div class="header-right">
             <span class="contact">
-                <img src="../assets/phone.png" alt="Phone" class="icon">
+                <img src="assets/phone.png" alt="Phone" class="icon">
                 01*********
             </span>
             <span class="location">
-                <img src="../assets/location.png" alt="Location" class="icon">
+                <img src="assets/location.png" alt="Location" class="icon">
                 Dhaka, Bangladesh
             </span>
         </div>
@@ -30,7 +30,7 @@
     </nav>
     <div class="main-content">
         <div class="login-container">
-            <form>
+            <form id="loginForm" onsubmit="return validateForm(event)">
                 <h2 class="login-title">Login As</h2>
                 <div class="radio-group">
                     <input type="radio" id="patient" name="role" value="Patient">
@@ -40,12 +40,45 @@
                     <input type="radio" id="admin" name="role" value="Admin">
                     <label for="admin">Admin</label>
                 </div>
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
+                <div class="error" id="roleError"></div>
+                <input type="text" id="username" placeholder="Username" required>
+                <div class="error" id="usernameError"></div>
+                <input type="password" id="password" placeholder="Password" required>
+                <div class="error" id="passwordError"></div>
                 <button type="submit">Login</button>
                 <p class="forgot-password"><a href="#">Forget Password?</a></p>
             </form>
         </div>
     </div>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            document.getElementById('roleError').textContent = '';
+            document.getElementById('usernameError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            let isValid = true;
+            const role = document.querySelector('input[name="role"]:checked');
+            if (!role) {
+                document.getElementById('roleError').textContent = 'Please select a role';
+                isValid = false;
+            }
+            const username = document.getElementById('username').value;
+            const usernameRegex = /^[A-Za-z\s]+$/;
+            if (!usernameRegex.test(username)) {
+                document.getElementById('usernameError').textContent = 'Username must contain only alphabets';
+                isValid = false;
+            }
+            const password = document.getElementById('password').value;
+            const passwordRegex = /^.{8,12}$/;
+            if (!passwordRegex.test(password)) {
+                document.getElementById('passwordError').textContent = 'Password must be between 8 and 12 characters long';
+                isValid = false;
+            }
+            if (isValid) {
+                alert('Logging in');
+            }
+            return isValid;
+        }
+    </script>
 </body>
 </html>
