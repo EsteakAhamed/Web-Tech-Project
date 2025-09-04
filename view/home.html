@@ -27,32 +27,49 @@
     <nav>
         <ul class="nav-left">
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Registration</a></li>
+            <li><a href="../registration.html">Registration</a></li>
         </ul>
     </nav>
     <div class="main-content">
         <div class="login-container">
-            <form id="loginForm" onsubmit="return validateForm(event)">
+            <form id="loginForm" method="post" onsubmit="return validateForm(event)">
                 <h2 class="login-title">Login As</h2>
                 <div class="radio-group">
-                    <input type="radio" id="patient" name="role" value="Patient">
+                    <input type="radio" id="patient" name="role" value="Patient" onchange="updateTheme()">
                     <label for="patient">Patient</label>
-                    <input type="radio" id="doctor" name="role" value="Doctor">
+                    <input type="radio" id="doctor" name="role" value="Doctor" onchange="updateTheme()">
                     <label for="doctor">Doctor</label>
-                    <input type="radio" id="admin" name="role" value="Admin">
+                    <input type="radio" id="admin" name="role" value="Admin" onchange="updateTheme()">
                     <label for="admin">Admin</label>
                 </div>
                 <div class="error" id="roleError"></div>
-                <input type="text" id="username" placeholder="Username" required>
+                <input type="text" id="username" placeholder="Username">
                 <div class="error" id="usernameError"></div>
-                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="password" placeholder="Password">
                 <div class="error" id="passwordError"></div>
                 <button type="submit">Login</button>
-                <p class="forgot-password"><a href="#">Forget Password?</a></p>
+                <p class="forgot-password"><a href="../forgetPass.html">Forget Password?</a></p>
             </form>
         </div>
     </div>
     <script>
+        function updateTheme() {
+
+            const loginContainer = document.querySelector('.login-container');
+
+            const selectedRole = document.querySelector('input[name="role"]:checked');
+
+            if (selectedRole) {
+                if (selectedRole.value === 'Patient') {
+                    loginContainer.style.backgroundColor = '#ADD8E6';
+                } else if (selectedRole.value === 'Doctor') {
+                    loginContainer.style.backgroundColor = '#90EE90';
+                } else if (selectedRole.value === 'Admin') {
+                    loginContainer.style.backgroundColor = '#B0B0E6';
+                }
+            }
+        }
+
         function validateForm(event) {
             event.preventDefault();
             document.getElementById('roleError').textContent = '';
@@ -72,7 +89,7 @@
 
             const usernameRegex = /^[A-Za-z\s]+$/;
             if (!usernameRegex.test(username)) {
-                document.getElementById('usernameError').textContent = 'Username must contain only alphabets';
+                document.getElementById('usernameError').textContent = 'Username must contain only letters';
                 isValid = false;
             }
 
@@ -81,9 +98,9 @@
                 document.getElementById('passwordError').textContent = 'Password must be at least 8 characters long';
                 isValid = false;
             }
-
             if (isValid) {
                 alert('Logging in');
+                window.location.href = "admin.html";
             }
             return isValid;
         }

@@ -27,7 +27,7 @@
     </aside>
     <main class="main">
       <h1>Add New Doctor</h1>
-      <form class="add-form" id="addDoctorForm" onsubmit="return validateForm(event)">
+      <form class="add-form" id="addDoctorForm" method="post" onsubmit="return validateForm(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
         <div class="error" id="nameError"></div>
@@ -91,9 +91,9 @@
         isValid = false;
       }
 
-      const passwordRegex = /^.{8,12}$/;
+      const passwordRegex = /^.{8,}$/;
       if (!passwordRegex.test(password)) {
-        document.getElementById('passwordError').textContent = 'Password must be between 8 and 12 characters long';
+        document.getElementById('passwordError').textContent = 'Password must be at least 8 characters long';
         isValid = false;
       }
 
