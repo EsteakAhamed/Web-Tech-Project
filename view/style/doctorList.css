@@ -1,121 +1,267 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-  background: #f4f4f9;
-  min-height: 100vh;
+    background: linear-gradient(135deg, #e6e6fa 0%, #d3cce3 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .container {
-  display: flex;
-  min-height: 100vh;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
 }
 
 .sidebar {
-  width: 250px;
-  background: #7B68EE;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+    width: 250px;
+    background-color: #6a5acd;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
 }
 
 .profile img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .profile h2 {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #ffffff;
 }
 
 .logout {
-  background: #e74c3c;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 30px;
-  width: 100%;
-  transition: background 0.3s;
+    background-color: #e53e3e;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 24px;
+    width: 100%;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .logout:hover {
-  background: #c0392b;
+    background-color: #c53030;
+    transform: scale(1.02);
+}
+
+.logout:active {
+    transform: scale(0.98);
 }
 
 .menu ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .menu ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 8px;
-  display: block;
-  transition: background 0.3s, transform 0.2s;
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 6px;
+    display: block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .menu ul li.active a,
 .menu ul li a:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateX(5px);
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateX(5px);
 }
 
 .main {
-  flex: 1;
-  padding: 40px;
+    flex: 1;
+    padding: 40px;
+    background-color: #f5f5ff;
 }
 
 .main h1 {
-  margin-bottom: 20px;
-  color: #6A5ACD;
+    margin-bottom: 24px;
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .search-bar {
-  padding: 10px;
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 400px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #6a5acd;
+    box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.1);
 }
 
 .doctor-table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.doctor-table th, .doctor-table td {
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: left;
+.doctor-table th,
+.doctor-table td {
+    padding: 14px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+    font-size: 15px;
+    color: #4a5568;
 }
 
 .doctor-table th {
-  background-color: #f2f2f2;
-  color: #333;
+    background-color: #edf2f7;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.doctor-table tr:hover {
+    background-color: rgba(106, 90, 205, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main {
+        padding: 32px;
+    }
+
+    .search-bar {
+        max-width: 400px;
+    }
+
+    .doctor-table th,
+    .doctor-table td {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        transform: translateY(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar.active {
+        transform: translateY(0);
+    }
+
+    .main {
+        padding: 24px;
+        margin-top: 60px;
+    }
+
+    .main h1 {
+        font-size: 24px;
+    }
+
+    .search-bar {
+        max-width: 100%;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .profile img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .profile h2 {
+        font-size: 18px;
+    }
+
+    .logout {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .menu ul li a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    .doctor-table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 16px;
+    }
+
+    .main h1 {
+        font-size: 22px;
+    }
+
+    .search-bar {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .doctor-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .doctor-table th,
+    .doctor-table td {
+        padding: 10px;
+        font-size: 13px;
+    }
 }
