@@ -1,65 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HealWell Hospital - Add Doctor</title>
-  <link rel="stylesheet" href="style/doctorAdd.css">
-</head>
-
-<body>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="profile">
-        <img src="assets/profile.png" alt="Profile">
-        <h2><a href="profile.html">Profile</a></h2>
-      </div>
-      <button class="logout">Logout</button>
-      <nav class="menu">
-        <ul>
-          <li><a href="admin.html">Dashboard</a></li>
-          <li class="active"><a href="doctor.html">Doctor</a></li>
-          <li><a href="patient.html">Patient</a></li>
-          <li><a href="feedback.html">Feedbacks</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <main class="main">
-      <h1>Add New Doctor</h1>
-      <form class="add-form" id="addDoctorForm" method="post" onsubmit="return validateForm(event)">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-        <div class="error" id="nameError"></div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <div class="error" id="emailError"></div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <div class="error" id="passwordError"></div>
-        <label for="speciality">Speciality:</label>
-        <select id="speciality" name="speciality">
-          <option value="">Select Speciality</option>
-          <option value="cardiology">Cardiology</option>
-          <option value="neurology">Neurology</option>
-          <option value="pediatrics">Pediatrics</option>
-        </select>
-        <div class="error" id="specialityError"></div>
-        <label for="regnumber">Registration Number:</label>
-        <input type="text" id="regnumber" name="regnumber">
-        <div class="error" id="regnumberError"></div>
-        <label for="salary">Salary:</label>
-        <input type="number" id="salary" name="salary">
-        <div class="error" id="salaryError"></div>
-        <label for="picture">Choose Picture:</label>
-        <input type="file" id="picture" name="picture" accept="image/*">
-        <div class="error" id="pictureError"></div>
-        <button type="submit">Add</button>
-      </form>
-    </main>
-  </div>
-  <script>
-    function validateForm(event) {
+function validateForm(event) {
       event.preventDefault();
 
       document.getElementById('nameError').textContent = '';
@@ -130,7 +69,3 @@
 
       return isValid;
     }
-  </script>
-</body>
-
-</html>

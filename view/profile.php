@@ -35,7 +35,7 @@
                     <p>September 05, 2025, 9:00 PM</p>
                 </div>
             </div>
-            <a href="changePass.html" class="btn">Change Password</a>
+            <a href="changePass.php" class="btn">Change Password</a>
         </div>
     </div>
 </body>

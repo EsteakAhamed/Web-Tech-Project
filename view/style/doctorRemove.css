@@ -180,6 +180,36 @@ body {
     transform: scale(0.98);
 }
 
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 6px;
+    display: none;
+}
+
+.search-btn {
+    background-color: #6a5acd;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-btn:hover {
+    background-color: #5a4abf;
+    transform: scale(1.02);
+}
+
+.search-btn:active {
+    transform: scale(0.98);
+}
+
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .sidebar {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=view/home.html">
+    <meta http-equiv="refresh" content="0;url=view/home.php">
     <title>HealWell - Redirecting</title>
     <style>
         * {
@@ -61,45 +61,14 @@
             color: #5b4cb8;
             transform: translateY(-2px);
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 24px;
-                max-width: 400px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            a {
-                font-size: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px;
-                max-width: 100%;
-            }
-
-            h1 {
-                font-size: 22px;
-                margin-bottom: 12px;
-            }
-
-            a {
-                font-size: 14px;
-            }
-        }
     </style>
 </head>
 
 <body>
+    <?php echo "Index loaded"; ?>
     <div class="container">
         <h1>Redirecting to HealWell Home...</h1>
-        <p>If you are not redirected, <a href="view/home.html">click here</a>.</p>
+        <p>If you are not redirected, <a href="view/home.php">click here</a>.</p>
     </div>
 </body>
 

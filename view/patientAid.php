@@ -11,15 +11,15 @@
         <aside class="sidebar">
             <div class="profile-section">
                 <img src="assets/profile.png" alt="Profile" class="profile-img">
-                <h2><a href="profile.html">Profile</a></h2>
+                <h2><a href="profile.php">Profile</a></h2>
             </div>
-            <button class="logout-btn">Logout</button>
+            <a href="../controller/logoutAction.php"><button class="logout-btn">Logout</button></a>
             <nav class="sidebar-menu">
                 <ul>
-                    <li><a href="admin.html">Dashboard</a></li>
-                    <li><a href="doctor.html">Doctor</a></li>
-                    <li class="active"><a href="patient.html">Patient</a></li>
-                    <li><a href="feedback.html">Feedbacks</a></li>
+                    <li><a href="admin.php">Dashboard</a></li>
+                    <li><a href="doctor.php">Doctor</a></li>
+                    <li class="active"><a href="patient.php">Patient</a></li>
+                    <li><a href="feedback.php">Feedbacks</a></li>
                 </ul>
             </nav>
         </aside>

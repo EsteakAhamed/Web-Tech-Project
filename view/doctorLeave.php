@@ -3,45 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HealWell Hospital - Approve Doctor Requests</title>
-  <link rel="stylesheet" href="style/doctorReq.css">
+  <title>HealWell Hospital - Leave Requests</title>
+  <link rel="stylesheet" href="style/doctorLeave.css">
 </head>
 <body>
   <div class="container">
     <aside class="sidebar">
       <div class="profile">
         <img src="assets/profile.png" alt="Profile">
-        <h2><a href="profile.html">Profile</a></h2>
+        <h2><a href="profile.php">Profile</a></h2>
       </div>
-      <button class="logout">Logout</button>
+      <a href="../controller/logoutAction.php"><button class="logout">Logout</button></a>
       <nav class="menu">
         <ul>
-          <li><a href="admin.html">Dashboard</a></li>
-          <li class="active"><a href="doctor.html">Doctor</a></li>
-          <li><a href="patient.html">Patient</a></li>
-          <li><a href="feedback.html">Feedbacks</a></li>
+          <li><a href="admin.php">Dashboard</a></li>
+          <li class="active"><a href="doctor.php">Doctor</a></li>
+          <li><a href="patient.php">Patient</a></li>
+          <li><a href="feedback.php">Feedbacks</a></li>
         </ul>
       </nav>
     </aside>
 
     <main class="main">
-      <h1>Approve Doctor's Requests</h1>
+      <h1>Leave Requests</h1>
       <table class="doctor-table">
         <thead>
           <tr>
             <th>Doctor Name</th>
-            <th>Item Name</th>
-            <th>Quantity</th>
-            <th>Additional Note</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Reason</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Emon</td>
-            <td>Stethoscope</td>
-            <td>1</td>
-            <td>Urgent need</td>
+            <td>2025-09-10</td>
+            <td>2025-09-15</td>
+            <td>Family vacation</td>
             <td>
               <button class="approve-btn">Approve</button>
               <button class="reject-btn">Reject</button>
