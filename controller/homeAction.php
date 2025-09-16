@@ -42,6 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($isValid && checkLogin($username, $password)) {
         $_SESSION['isLoggedIn'] = true;
 
+        $conn = mysqli_connect("localhost", "root", "", "hms");
+        $sql = "SELECT * FROM registration WHERE fullname='$username' AND password='$password' LIMIT 1";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+        mysqli_close($conn);
+        if ($row) {
+            $_SESSION['fullname'] = $row['fullname']; 
+        }
+
         if ($remember === "remember") {
             setcookie("remember_username", $username, time() + 3600, "/");
             setcookie("remember_role", $role, time() + 3600, "/");

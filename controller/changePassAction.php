@@ -1,9 +1,13 @@
 <?php
 session_start();
+require('../model/changePassModel.php');
+
+error_log('Session fullname: ' . ($_SESSION['fullname'] ?? 'NOT SET'));
 
 $currentPassword = $_POST['current'] ?? '';
 $newPassword = $_POST['new'] ?? '';
 $confirmPassword = $_POST['confirm'] ?? '';
+$fullname = $_SESSION['fullname'] ?? '';
 
 $_SESSION['currentError'] = '';
 $_SESSION['newError'] = '';
@@ -28,7 +32,24 @@ if ($confirmPassword !== $newPassword) {
 }
 
 if ($isValid) {
-    $_SESSION['success'] = "Password changed successfully PHP";
+    if (!checkCurrentPassword($fullname, $currentPassword)) {
+        $_SESSION['currentError'] = "Incorrect Current Password";
+        header("Location: ../view/changePass.php");
+        exit();
+    } else {
+        if (updatePassword($fullname, $newPassword)) {
+            $_SESSION['success'] = "Password changed successfully";
+            header("Location: logoutAction.php");
+            exit();
+        } else {
+            $_SESSION['currentError'] = "Failed to change password";
+            header("Location: ../view/changePass.php");
+            exit();
+        }
+    }
+} else {
+    header("Location: ../view/changePass.php");
+    exit();
 }
 
 header("Location: ../view/changePass.php");
