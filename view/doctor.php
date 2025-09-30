@@ -1,3 +1,6 @@
+<?php
+require('../controller/sessionCheck.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +29,7 @@
 
     <main class="main">
       <div class="cards">
-        <a href="doctorList.php" class="card">
+        <a href="../controller/doctorListAction.php" class="card">
           <span class="icon">👨‍⚕️</span>
           <div>
             <h3>View Doctor's List</h3>
@@ -40,7 +43,7 @@
             <p>Register a new doctor</p>
           </div>
         </a>
-        <a href="doctorRemove.php" class="card">
+        <a href="../controller/doctorRemoveAction.php" class="card">
           <span class="icon">❌</span>
           <div>
             <h3>Remove Doctor</h3>

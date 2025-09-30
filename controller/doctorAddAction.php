@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('../model/doctorAddModel.php');
 
 $name = htmlspecialchars($_POST['name'] ?? '');
 $email = htmlspecialchars($_POST['email'] ?? '');
@@ -62,9 +63,14 @@ if (!$picture || $picture['error'] !== 0 || strpos($picture['type'], 'image/') !
 }
 
 if ($isValid) {
-    $_SESSION['success'] = "Doctor added successfully PHP";
+    $result = addDoctor($name, $email, $password, $speciality, $regnumber, $salary, $picture);
+
+    if ($result) {
+        $_SESSION['success'] = "Doctor added successfully PHP";
+    } else {
+        $_SESSION['success'] = "Failed to add doctor PHP";
+    }
 }
 
 header("Location: ../view/doctorAdd.php");
 exit();
-?>

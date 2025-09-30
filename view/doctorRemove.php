@@ -1,3 +1,6 @@
+<?php
+require('../controller/sessionCheck.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,14 +50,32 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Emon</td>
-            <td>Cardiology</td>
-            <td>emon@example.com</td>
-            <td>A1B2C3</td>
-            <td>$150,000</td>
-            <td><button class="remove-btn">Remove</button></td>
-          </tr>
+          <?php
+          require('../model/doctorListModel.php');
+          $doctorList = getAllDoctors();
+          ?>
+
+          <?php if (!empty($doctorList)): ?>
+            <?php foreach ($doctorList as $doctor): ?>
+              <tr>
+                <td><?php echo $doctor['name']; ?></td>
+                <td><?php echo $doctor['speciality']; ?></td>
+                <td><?php echo $doctor['email']; ?></td>
+                <td><?php echo $doctor['regnumber']; ?></td>
+                <td><?php echo '$' . number_format($doctor['salary'], 2); ?></td>
+                <td>
+                  <form method="post" action="../controller/doctorRemoveAction.php" onsubmit="return confirm('Are you sure you want to remove this doctor?');">
+                    <input type="hidden" name="regnumber" value="<?php echo $doctor['regnumber']; ?>">
+                    <button type="submit" class="remove-btn">Remove</button>
+                  </form>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <tr>
+              <td colspan="6">No doctors found.</td>
+            </tr>
+          <?php endif; ?>
         </tbody>
       </table>
     </main>

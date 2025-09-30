@@ -104,6 +104,6 @@ unset($_SESSION['nameError'], $_SESSION['dobError'], $_SESSION['genderError'], $
 
         <p style="color:green; text-align:center;"><?php echo $success ?></p>
     </div>
-    <!-- <script src="script/registration.js"></script> -->
+    <script src="script/registration.js"></script>
 </body>
 </html>

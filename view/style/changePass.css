@@ -69,6 +69,27 @@ h2 {
   min-height: 20px;
 }
 
+.suggestions-box {
+    border: 1px solid #ccc;
+    background: #fff;
+    max-width: 250px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.suggestion {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: #f0f0f0;
+}
+
+
 /* Responsive Design */
 @media (max-width: 480px) {
   .container {

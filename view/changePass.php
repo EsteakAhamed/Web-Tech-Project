@@ -1,5 +1,7 @@
 <?php
-session_start();
+require('../controller/sessionCheck.php');
+//session_start();
+
 $currentError = $_SESSION['currentError'] ?? '';
 $newError = $_SESSION['newError'] ?? '';
 $confirmError = $_SESSION['confirmError'] ?? '';
@@ -26,22 +28,26 @@ unset($_SESSION['currentError'], $_SESSION['newError'], $_SESSION['confirmError'
                 <label for="current">Current Password</label>
                 <input type="password" id="current-pass" name="current" placeholder="Enter current password">
                 <div class="error"><?php echo $currentError ?></div>
+                <span id="current-span" class="error"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="position:relative;">
                 <label for="new">New Password</label>
                 <input type="password" id="new-pass" name="new" placeholder="Enter new password">
                 <div class="error"><?php echo $newError ?></div>
+                <span id="new-span" class="error"></span>
+                <div id="password-suggestions" class="suggestions-box"></div>
             </div>
             <div class="form-group">
                 <label for="confirm">Confirm New Password</label>
                 <input type="password" id="confirm-pass" name="confirm" placeholder="Re-enter new password">
                 <div class="error"><?php echo $confirmError ?></div>
+                <span id="confirm-span" class="error"></span>
             </div>
             <button type="submit" id="btn-id" class="btn">Update Password</button>
             <p class="note"><?php echo $success ?></p>
         </form>
     </div>
-    <!-- <script src="script/changePass.js"></script> -->
+    <script src="script/changePass.js"></script>
 </body>
 
 </html>

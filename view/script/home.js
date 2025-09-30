@@ -16,14 +16,13 @@ function updateTheme() {
 }
 
 function validateForm(event) {
-    event.preventDefault();
     document.getElementById('roleError').textContent = '';
-    document.getElementById('usernameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
     document.getElementById('passwordError').textContent = '';
 
     let isValid = true;
 
-    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
 
     const role = document.querySelector('input[name="role"]:checked');
@@ -32,9 +31,9 @@ function validateForm(event) {
         isValid = false;
     }
 
-    const usernameRegex = /^[A-Za-z\s]+$/;
-    if (!usernameRegex.test(username)) {
-        document.getElementById('usernameError').textContent = 'Username must contain only letters';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        document.getElementById('emailError').textContent = 'Please enter a valid email address';
         isValid = false;
     }
 
@@ -43,9 +42,12 @@ function validateForm(event) {
         document.getElementById('passwordError').textContent = 'Password must be at least 8 characters long';
         isValid = false;
     }
+
     if (isValid) {
         alert('Logging in');
-        return true;
+        return true; 
+    } else {
+        event.preventDefault(); 
+        return false;
     }
-    return false;
 }

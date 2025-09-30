@@ -4,14 +4,14 @@ require("../model/homeModel.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $role = $_POST['role'] ?? '';
-    $username = htmlspecialchars($_POST['username'] ?? '');
+    $email = htmlspecialchars($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
     $remember = $_POST['remember'] ?? '';
 
     $_SESSION['role'] = $role;
-    $_SESSION['username'] = $username;
+    $_SESSION['email'] = $email;
     $_SESSION['roleError'] = "";
-    $_SESSION['usernameError'] = "";
+    $_SESSION['emailError'] = "";
     $_SESSION['passwordError'] = "";
     $_SESSION['loginError'] = "";
     $_SESSION['isLoggedIn'] = false;
@@ -23,11 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $isValid = false;
     }
 
-    if (empty($username)) {
-        $_SESSION['usernameError'] = "Username is required PHP";
+    if (empty($email)) {
+        $_SESSION['emailError'] = "Email is required PHP";
         $isValid = false;
-    } elseif (!preg_match("/^[A-Za-z0-9_]+$/", $username)) {
-        $_SESSION['usernameError'] = "Only letters, numbers, and underscores allowed PHP";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $_SESSION['emailError'] = "Invalid email format PHP";
         $isValid = false;
     }
 
@@ -39,11 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $isValid = false;
     }
 
-    if ($isValid && checkLogin($username, $password)) {
+    if ($isValid && checkLogin($email, $password)) {
         $_SESSION['isLoggedIn'] = true;
 
         $conn = mysqli_connect("localhost", "root", "", "hms");
-        $sql = "SELECT * FROM registration WHERE fullname='$username' AND password='$password' LIMIT 1";
+        $sql = "SELECT * FROM registration WHERE email='$email' AND password='$password' LIMIT 1";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
         mysqli_close($conn);
@@ -52,17 +52,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if ($remember === "remember") {
-            setcookie("remember_username", $username, time() + 3600, "/");
+            setcookie("remember_email", $email, time() + 3600, "/");
             setcookie("remember_role", $role, time() + 3600, "/");
         } else {
-            setcookie("remember_username", "", time() - 1, "/");
+            setcookie("remember_email", "", time() - 1, "/");
             setcookie("remember_role", "", time() - 1, "/");
         }
 
         header("Location: ../view/admin.php");
         exit();
     } else {
-        $_SESSION['loginError'] = "Invalid username, password, or role PHP";
+        $_SESSION['loginError'] = "Invalid email, password, or role PHP";
         header("Location: ../view/home.php");
         exit();
     }

@@ -1,13 +1,13 @@
 <?php
 session_start();
-$username = $_SESSION['username'] ?? ($_COOKIE['remember_username'] ?? '');
+$email = $_SESSION['email'] ?? ($_COOKIE['remember_email'] ?? '');
 $role = $_SESSION['role'] ?? ($_COOKIE['remember_role'] ?? '');
 $roleError = $_SESSION['roleError'] ?? '';
-$usernameError = $_SESSION['usernameError'] ?? '';
+$emailError = $_SESSION['emailError'] ?? '';
 $passwordError = $_SESSION['passwordError'] ?? '';
 $loginError = $_SESSION['loginError'] ?? '';
 
-unset($_SESSION['roleError'], $_SESSION['usernameError'], $_SESSION['passwordError'], $_SESSION['loginError']);
+unset($_SESSION['roleError'], $_SESSION['emailError'], $_SESSION['passwordError'], $_SESSION['loginError']);
 ?>
 
 <!DOCTYPE html>
@@ -58,8 +58,8 @@ unset($_SESSION['roleError'], $_SESSION['usernameError'], $_SESSION['passwordErr
                 </div>
                 <div class="error" id="roleError"><?php echo $roleError; ?></div>
 
-                <input type="text" id="username" name="username" placeholder="Username" value="<?php echo $username; ?>">
-                <div class="error" id="usernameError"><?php echo $usernameError; ?></div>
+                <input type="text" id="email" name="email" placeholder="Email" value="<?php echo $email; ?>">
+                <div class="error" id="emailError"><?php echo $emailError; ?></div>
 
                 <input type="password" id="password" name="password" placeholder="Password">
                 <div class="error" id="passwordError"><?php echo $passwordError; ?></div>
@@ -78,7 +78,7 @@ unset($_SESSION['roleError'], $_SESSION['usernameError'], $_SESSION['passwordErr
             </form>
         </div>
     </div>
-    <!-- <script src="script/home.js"></script> -->
+    <script src="script/home.js"></script>
 </body>
 
 </html>

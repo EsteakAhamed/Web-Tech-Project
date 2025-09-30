@@ -1,5 +1,7 @@
 <?php
-session_start();
+require('../controller/sessionCheck.php');
+?>
+<?php
 $name = $_SESSION['name'] ?? '';
 $email = $_SESSION['email'] ?? '';
 $speciality = $_SESSION['speciality'] ?? '';
@@ -86,7 +88,7 @@ unset($_SESSION['nameError'], $_SESSION['emailError'], $_SESSION['passwordError'
       </form>
     </main>
   </div>
-  <!-- <script src="script/doctorAdd.js"></script> -->
+  <script src="script/doctorAdd.js"></script>
 </body>
 
 </html>

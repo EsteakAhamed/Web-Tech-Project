@@ -1,3 +1,6 @@
+<?php
+require('../controller/sessionCheck.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 

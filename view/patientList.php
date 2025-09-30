@@ -1,11 +1,18 @@
+<?php
+require('../controller/sessionCheck.php');
+$patientList = $_SESSION['patientList'] ?? [];
+unset($_SESSION['patientList']);
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealWell Hospital - Patient List</title>
     <link rel="stylesheet" href="style/patientList.css">
 </head>
+
 <body>
     <div class="container">
         <aside class="sidebar">
@@ -18,7 +25,7 @@
                 <ul>
                     <li><a href="admin.php">Dashboard</a></li>
                     <li><a href="doctor.php">Doctor</a></li>
-                    <li class="active"><a href="patient.php">Patient</a></li>
+                    <li class="active"><a href="../controller/patientListAction.php">Patient</a></li>
                     <li><a href="feedback.php">Feedbacks</a></li>
                 </ul>
             </nav>
@@ -41,13 +48,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Nirob</td>
-                        <td>25</td>
-                        <td>nirob@example.com</td>
-                        <td>017********</td>
-                        <td>Noakhali Division</td>
-                    </tr>
+                    <?php if (!empty($patientList)): ?>
+                        <?php foreach ($patientList as $patient): ?>
+                            <tr>
+                                <td><?php echo $patient['name']; ?></td>
+                                <td><?php echo $patient['age']; ?></td>
+                                <td><?php echo $patient['email']; ?></td>
+                                <td><?php echo $patient['phone']; ?></td>
+                                <td><?php echo $patient['address']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="5">No patients found.</td>
+                        </tr>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </main>
@@ -67,4 +82,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -55,7 +55,7 @@ unset($_SESSION['emailError'], $_SESSION['otpError'], $_SESSION['newPassError'],
             </form>
         </div>
     </main>
-    <!-- <script src="script/forgetPass.js"></script> -->
+    <script src="script/forgetPass.js"></script>
 </body>
 
 </html>

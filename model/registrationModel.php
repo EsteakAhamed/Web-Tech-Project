@@ -2,37 +2,35 @@
 function registerUser($fullname, $dob, $gender, $phone, $email, $address, $blood, $password)
 {
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "root"; 
+    $dbpassword = "";   
     $dbname = "hms";
 
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = mysqli_connect($servername, $username, $dbpassword, $dbname);
 
     // Check connection
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // Get values from registration form
-    $fullname = $_POST['fullname'];
-    $dob = $_POST['dob'];
-    $gender = $_POST['gender'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $address = $_POST['address'];
-    $blood = $_POST['blood'];
-    $password = $_POST['password'];
+    // Escape values to prevent SQL injection
+    $fullname = mysqli_real_escape_string($conn, $fullname);
+    $dob = mysqli_real_escape_string($conn, $dob);
+    $gender = mysqli_real_escape_string($conn, $gender);
+    $phone = mysqli_real_escape_string($conn, $phone);
+    $email = mysqli_real_escape_string($conn, $email);
+    $address = mysqli_real_escape_string($conn, $address);
+    $blood = mysqli_real_escape_string($conn, $blood);
+    $password = mysqli_real_escape_string($conn, $password);
 
     // Insert query
-    $sql = "INSERT INTO registration (fullname, dob, gender, phone, email, address, blood, password) 
-VALUES ('$fullname', '$dob', '$gender', '$phone', '$email', '$address', '$blood', '$password')";
+    $sql = "INSERT INTO registration (fullname, dob, gender, phone, email, address, blood, password)
+            VALUES ('$fullname', '$dob', '$gender', '$phone', '$email', '$address', '$blood', '$password')";
 
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+    $result = mysqli_query($conn, $sql);
+
     mysqli_close($conn);
+
+    return $result;
 }
-?>

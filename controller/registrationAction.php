@@ -83,7 +83,7 @@ if ($isValid) {
     if ($result) {
         $_SESSION['success'] = "Registered successfully! PHP";
     } else {
-        $_SESSION['success'] = "Registration failed. Please try again. PHP";
+        $_SESSION['success'] = "Registration failed! PHP"; 
     }
 }
 

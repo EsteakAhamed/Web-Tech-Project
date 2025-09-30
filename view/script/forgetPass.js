@@ -1,5 +1,4 @@
 function validateForm(event) {
-    event.preventDefault();
     document.getElementById('email-span').textContent = '';
     document.getElementById('otp-span').textContent = '';
     document.getElementById('new-pass-span').textContent = '';
@@ -28,8 +27,9 @@ function validateForm(event) {
         document.getElementById('confirm-pass-span').textContent = 'Passwords do not match';
         isValid = false;
     }
-    if (isValid) {
-        alert('Form is valid!');
+    if (!isValid) {
+        event.preventDefault();
+        return false;
     }
-    return isValid;
+    return true;
 }
