@@ -1,0 +1,159 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+  background: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  width: 100%;
+  background: #3498db;
+  color: #fff;
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header .signup-btn {
+  background: #fff;
+  color: #3498db;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header .signup-btn:hover {
+  background: #2980b9;
+  color: #fff;
+}
+
+/* Container */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px; /* space for header */
+  padding-bottom: 60px; /* space for footer */
+}
+
+.container {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccd1d9;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #3498db;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #3498db;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+.note {
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.note a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.note a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.note {
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: center;
+  color: #555;
+}
+
+.note a {
+  color: #3498db;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.note a:hover {
+  text-decoration: underline;
+}

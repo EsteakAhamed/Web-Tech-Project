@@ -1,0 +1,46 @@
+.profile-container {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  max-width: 600px;
+  margin: auto;
+}
+
+.profile-container h2 {
+  text-align: center;
+  color: #0073e6;
+  margin-bottom: 25px;
+}
+
+.profile-field {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.profile-field label {
+  font-weight: 600;
+  color: #333;
+}
+
+.profile-field span {
+  color: #555;
+}
+
+.btn-change-pass-btn {
+  padding: 10px 22px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.change-pass-btn:hover {
+  background: #2980b9;
+}
+

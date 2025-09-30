@@ -1,0 +1,50 @@
+/* Financial Aid Form */
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #0073e6;
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-container button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #4da6ff, #0073e6);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  /* transition: background 0.3s, transform 0.2s; */
+}
+
+.form-container button:hover {
+  background: linear-gradient(45deg, #3399ff, #005bb5);
+  transform: scale(1.05);
+}

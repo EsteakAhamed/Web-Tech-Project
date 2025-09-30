@@ -1,0 +1,142 @@
+
+
+/* Main Layout */
+.main {
+flex: 1;
+display: flex;
+flex-direction: column;
+position: relative;
+}
+
+/* Background pattern
+.main::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url("https://www.transparenttextures.com/patterns/cubes.png") repeat;
+opacity: 0.08;
+z-index: 0;
+} */
+
+/* Navbar */
+.navbar {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+background: white;
+padding: 12px 20px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+/* z-index: 2; */
+position: relative;
+}
+.navbar button {
+margin-left: 12px;
+padding: 8px 18px;
+border: none;
+border-radius: 20px;
+cursor: pointer;
+background: linear-gradient(45deg, #4da6ff, #3399ff);
+color: white;
+font-weight: bold;
+/* transition: background 0.3s, transform 0.2s; */
+display: flex;
+align-items: center;
+gap: 6px;
+font-size: 14px;
+}
+.navbar button:hover {
+background: linear-gradient(45deg, #3399ff, #0073e6);
+transform: scale(1.05);
+}
+
+/* Section */
+
+section{
+    display: flex;
+    
+}
+
+/* Content */
+.content {
+flex: 1;
+padding: 40px;
+z-index: 1;
+position: relative;
+overflow-y: auto;
+font-size: 16px;
+margin-left: 400px;
+}
+
+/* Complaint Form */
+.complaint-form {
+max-width: 700px;
+background: white;
+padding: 30px;
+border-radius: 14px;
+box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+align-items: center;
+}
+
+.complaint-form h2 {
+margin-bottom: 20px;
+color: #0073e6;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.form-group {
+margin-bottom: 18px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 6px;
+font-weight: 600;
+color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 8px;
+font-size: 15px;
+outline: none;
+transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+border-color: #0073e6;
+}
+
+textarea {
+resize: vertical;
+min-height: 120px;
+}
+
+.submit-btn {
+padding: 12px 20px;
+border: none;
+border-radius: 10px;
+background: linear-gradient(45deg, #4da6ff, #3399ff);
+
+color: white;
+font-size: 16px;
+font-weight: bold;
+/* cursor: pointer;
+transition: background 0.3s, transform 0.2s; */
+}
+
+.submit-btn:hover {
+background: linear-gradient(45deg, #3399ff, #0073e6);
+transform: translateY(-2px);
+}
+

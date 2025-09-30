@@ -1,0 +1,116 @@
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(180deg, #4da6ff, #0066cc);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+    /* z-index: 2; */
+}
+.sidebar h2 {
+    text-align: left;
+    font-size: 22px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    margin: 12px 0;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+
+/* Main Layout */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Background pattern
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/cubes.png") repeat;
+    opacity: 0.08;
+    z-index: 0;
+} */
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: white;
+    padding: 12px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    /* z-index: 2; */
+    position: relative;
+}
+.navbar button {
+    margin-left: 12px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #4da6ff, #3399ff);
+    color: white;
+    font-weight: bold;
+    /* transition: background 0.3s, transform 0.2s; */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+.navbar button:hover {
+    background: linear-gradient(45deg, #3399ff, #0073e6);
+    transform: scale(1.05);
+}
+
+/* Booking History Section */
+.content {
+    flex: 1;
+    padding: 40px;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 16px; /* same as Book Appointments */
+}
+
+.placeholder {
+    text-align: center;
+    color: #777;
+}

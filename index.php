@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=view/home.php">
+    <meta http-equiv="refresh" content="3;url=view/esteak/home.php">
     <title>HealWell - Redirecting</title>
     <style>
         * {
@@ -68,7 +68,7 @@
     <?php echo "Index loaded"; ?>
     <div class="container">
         <h1>Redirecting to HealWell Home...</h1>
-        <p>If you are not redirected, <a href="view/home.php">click here</a>.</p>
+        <p>If you are not redirected, <a href="view/esteak/home.php">click here</a>.</p>
     </div>
 </body>
 
